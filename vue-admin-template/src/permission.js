@@ -28,15 +28,14 @@ router.beforeEach((to, from, next) => {
       }
     }
   } else {
-    console.log('需要离线')
-    // 本地离线操作
-    next()
-    // if (whiteList.indexOf(to.path) !== -1) {
-    //   next()
-    // } else {
-    //   next(`/login?redirect=${to.path}`) // 否则全部重定向到登录页
-    //   NProgress.done()
-    // }
+    
+    if (whiteList.indexOf(to.path) !== -1) {
+      next()
+    } else {
+      console.log('需要离线')
+      next(`/login?redirect=${to.path}`) // 否则全部重定向到登录页
+      NProgress.done()
+    }
   }
 })
 
