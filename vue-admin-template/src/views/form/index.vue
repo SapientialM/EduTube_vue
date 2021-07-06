@@ -6,11 +6,11 @@
       </el-form-item>
       <el-form-item label="标签">
         <el-select v-model="form.label" placeholder="选择活动标签">
-          <el-option label="Vue" value="vue"/>
-          <el-option label="Java" value="java"/>
-          <el-option label="HTML/CSS" value="html_css"/>
-          <el-option label="Python" value="python"/>
-          <el-option label="C/C++" value="c_c++"/>
+          <el-option 
+          v-for="item in selectitems"
+          :key="item.value"
+          :label="item.lable" 
+          :value="item.value"/>
         </el-select>
       </el-form-item>
       <el-form-item label="活动时间">
@@ -75,6 +75,28 @@ export default {
         content: '',
         enterlength:0
       },
+      selectitems: [
+        {
+          value:'vue',
+          lable: 'Vue'
+        },
+        {
+          value:'java',
+          lable: 'Java'
+        },
+        {
+          value:'html_css',
+          lable: 'HTML/CSS'
+        },
+        {
+          value:'python',
+          lable: 'Python'
+        },
+        {
+          value:'c_c++',
+          lable: 'C/C++'
+        },
+      ],
       pickerOptionsStart: {
         disabledDate: time => {
           let endDateVal = this.form.enddate;
