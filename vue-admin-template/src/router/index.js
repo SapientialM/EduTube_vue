@@ -153,7 +153,7 @@ export const constantRouterMap = [
         path: 'index',
         name: 'Form',
         component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        meta: { title: '添加课程', icon: 'form' }
       }
     ]
   },
@@ -164,7 +164,7 @@ export const constantRouterMap = [
     redirect: '/nested/menu1',
     name: 'Nested',
     meta: {
-      title: 'Nested',
+      title: '菜单',
       icon: 'nested'
     },
     children: [
@@ -222,7 +222,7 @@ export const constantRouterMap = [
     children: [
       {
         path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        meta: { title: 'vue-element-admin', icon: 'link' }
       }
     ]
   },
