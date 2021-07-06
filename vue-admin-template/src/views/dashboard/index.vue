@@ -6,13 +6,11 @@
       <div class="dashboard-text">
         roles:<span v-for="role in roles" :key="role">{{ role }}</span>
       </div>
-      <div class="dashboard-text">GetInfo:</div>
-      <div class="dashboard-text">{{ info }}</div>
     </div>
-    <div class="infoReset">
-      <h3>个人设置</h3>
+    <div class="lastLogs">
+      <h3>最近操作</h3>
     </div>
-    <div class="myCourse"><h3>我的课程</h3></div>
+    <div class="messages"><h3>消息通知</h3></div>
   </div>
 </template>
 
@@ -52,5 +50,10 @@ export default {
     font-size: 30px;
     line-height: 46px;
   }
+}
+.info img {
+  display: flex;
+  width: 100px;
+  height: 100px;
 }
 </style>
