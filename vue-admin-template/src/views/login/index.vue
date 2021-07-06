@@ -94,14 +94,14 @@ export default {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
-          // 跳过验证 Api
-          if(this.loginForm.username == "admin"){
-              console.log('跳过')
-              console.log(this.redirect)
-              this.loading = false
-              this.$router.push({ path: this.redirect  || '/' })
-          }
-          else// 这里调取 store 里面的 Login 方法
+          // // 跳过验证 Api
+          // if(this.loginForm.username == "admin"){
+          //     console.log('跳过')
+          //     console.log(this.redirect)
+          //     this.loading = false
+          //     this.$router.push({ path: this.redirect  || '/' })
+          // }
+          // 这里调取 store 里面的 Login 方法
           this.$store.dispatch('Login', this.loginForm).then(() => {
             this.loading = false
             this.$router.push({ path: this.redirect || '/' })
