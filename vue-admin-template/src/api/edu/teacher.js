@@ -1,8 +1,7 @@
-/*
- * @Author: bibofu 
- * @Date: 2021-05-07 18:04:21 
- * @Last Modified by: bibofu
- * @Last Modified time: 2021-05-07 23:43:15
+/**
+ * @author agrinJPG
+ * @date 2021/7/6 17:16
+ * @Description 讲师api
  */
 
  

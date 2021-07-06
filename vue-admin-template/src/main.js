@@ -1,3 +1,8 @@
+/**
+ * @author agrinJPG
+ * @date 2021/7/6 17:16
+ * @Description main.js
+ */
 import Vue from 'vue'
 
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
