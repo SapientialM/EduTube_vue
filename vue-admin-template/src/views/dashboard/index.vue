@@ -17,33 +17,31 @@
         <el-table-column type="expand">
           <template slot-scope="scope">
             <el-form label-position="left" inline class="demo-table-expand">
-              <el-form-item label="商品名称">
+              <el-form-item label="操作对象">
                 <span>{{ scope.row.name }}</span>
               </el-form-item>
-              <el-form-item label="所属店铺">
+              <el-form-item label="ID">
                 <span>{{ scope.row.shop }}</span>
               </el-form-item>
-              <el-form-item label="商品 ID">
+              <el-form-item label="操作者">
                 <span>{{ scope.row.id }}</span>
               </el-form-item>
-              <el-form-item label="店铺 ID">
+              <el-form-item label="时间">
                 <span>{{ scope.row.shopId }}</span>
               </el-form-item>
-              <el-form-item label="商品分类">
+              <el-form-item label="操作类型">
                 <span>{{ scope.row.category }}</span>
               </el-form-item>
-              <el-form-item label="店铺地址">
+              <el-form-item label="备注">
                 <span>{{ scope.row.address }}</span>
-              </el-form-item>
-              <el-form-item label="商品描述">
-                <span>{{ scope.row.desc }}</span>
               </el-form-item>
             </el-form>
           </template>
         </el-table-column>
-        <el-table-column label="商品 ID" prop="id"> </el-table-column>
-        <el-table-column label="商品名称" prop="name"> </el-table-column>
-        <el-table-column label="描述" prop="desc"> </el-table-column>
+        <el-table-column label="时间" prop="id"> </el-table-column>
+        <el-table-column label="操作类型" prop="id"> </el-table-column>
+        <el-table-column label="操作者" prop="name"> </el-table-column>
+        <el-table-column label="备注" prop="desc"> </el-table-column>
       </el-table>
     </div>
     <div class="messages"><h3>消息通知</h3></div>
