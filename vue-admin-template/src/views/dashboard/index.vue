@@ -13,53 +13,41 @@
     </div>
     <div class="lastLogs">
       <h3>最近操作</h3>
-      <el-table
-    :data="tableData"
-    style="width: 100%">
-      <el-table-column type="expand">
-        <template slot-scope="scope">
-          <el-form label-position="left" inline class="demo-table-expand">
-            <el-form-item label="商品名称">
-              <span>{{ scope.row.name }}</span>
-            </el-form-item>
-            <el-form-item label="所属店铺">
-              <span>{{ scope.row.shop }}</span>
-            </el-form-item>
-            <el-form-item label="商品 ID">
-              <span>{{ scope.row.id }}</span>
-            </el-form-item>
-            <el-form-item label="店铺 ID">
-              <span>{{ scope.row.shopId }}</span>
-            </el-form-item>
-            <el-form-item label="商品分类">
-              <span>{{ scope.row.category }}</span>
-            </el-form-item>
-            <el-form-item label="店铺地址">
-              <span>{{ scope.row.address }}</span>
-            </el-form-item>
-            <el-form-item label="商品描述">
-              <span>{{ scope.row.desc }}</span>
-            </el-form-item>
-          </el-form>
-        </template>
-      </el-table-column>
-    <el-table-column
-      label="商品 ID"
-      prop="id">
-    </el-table-column>
-    <el-table-column
-      label="商品名称"
-      prop="name">
-    </el-table-column>
-    <el-table-column
-      label="描述"
-      prop="desc">
-    </el-table-column>
-  </el-table>
+      <el-table :data="tableData" style="width: 100%">
+        <el-table-column type="expand">
+          <template slot-scope="scope">
+            <el-form label-position="left" inline class="demo-table-expand">
+              <el-form-item label="商品名称">
+                <span>{{ scope.row.name }}</span>
+              </el-form-item>
+              <el-form-item label="所属店铺">
+                <span>{{ scope.row.shop }}</span>
+              </el-form-item>
+              <el-form-item label="商品 ID">
+                <span>{{ scope.row.id }}</span>
+              </el-form-item>
+              <el-form-item label="店铺 ID">
+                <span>{{ scope.row.shopId }}</span>
+              </el-form-item>
+              <el-form-item label="商品分类">
+                <span>{{ scope.row.category }}</span>
+              </el-form-item>
+              <el-form-item label="店铺地址">
+                <span>{{ scope.row.address }}</span>
+              </el-form-item>
+              <el-form-item label="商品描述">
+                <span>{{ scope.row.desc }}</span>
+              </el-form-item>
+            </el-form>
+          </template>
+        </el-table-column>
+        <el-table-column label="商品 ID" prop="id"> </el-table-column>
+        <el-table-column label="商品名称" prop="name"> </el-table-column>
+        <el-table-column label="描述" prop="desc"> </el-table-column>
+      </el-table>
     </div>
     <div class="messages"><h3>消息通知</h3></div>
   </div>
-  
 </template>
 <script src="//unpkg.com/vue@next"></script>
 <script src="//unpkg.com/element-plus/lib/index.full.js"></script>
@@ -73,39 +61,44 @@ export default {
   data() {
     return {
       info: "",
-      tableData: [{
-          id: '12987122',
-          name: '好滋好味鸡蛋仔',
-          category: '江浙小吃、小吃零食',
-          desc: '荷兰优质淡奶，奶香浓而不腻',
-          address: '上海市普陀区真北路',
-          shop: '王小虎夫妻店',
-          shopId: '10333'
-        }, {
-          id: '12987123',
-          name: '好滋好味鸡蛋仔',
-          category: '江浙小吃、小吃零食',
-          desc: '荷兰优质淡奶，奶香浓而不腻',
-          address: '上海市普陀区真北路',
-          shop: '王小虎夫妻店',
-          shopId: '10333'
-        }, {
-          id: '12987125',
-          name: '好滋好味鸡蛋仔',
-          category: '江浙小吃、小吃零食',
-          desc: '荷兰优质淡奶，奶香浓而不腻',
-          address: '上海市普陀区真北路',
-          shop: '王小虎夫妻店',
-          shopId: '10333'
-        }, {
-          id: '12987126',
-          name: '好滋好味鸡蛋仔',
-          category: '江浙小吃、小吃零食',
-          desc: '荷兰优质淡奶，奶香浓而不腻',
-          address: '上海市普陀区真北路',
-          shop: '王小虎夫妻店',
-          shopId: '10333'
-        }]
+      tableData: [
+        {
+          id: "12987122",
+          name: "好滋好味鸡蛋仔",
+          category: "江浙小吃、小吃零食",
+          desc: "荷兰优质淡奶，奶香浓而不腻",
+          address: "上海市普陀区真北路",
+          shop: "王小虎夫妻店",
+          shopId: "10333",
+        },
+        {
+          id: "12987123",
+          name: "好滋好味鸡蛋仔",
+          category: "江浙小吃、小吃零食",
+          desc: "荷兰优质淡奶，奶香浓而不腻",
+          address: "上海市普陀区真北路",
+          shop: "王小虎夫妻店",
+          shopId: "10333",
+        },
+        {
+          id: "12987125",
+          name: "好滋好味鸡蛋仔",
+          category: "江浙小吃、小吃零食",
+          desc: "荷兰优质淡奶，奶香浓而不腻",
+          address: "上海市普陀区真北路",
+          shop: "王小虎夫妻店",
+          shopId: "10333",
+        },
+        {
+          id: "12987126",
+          name: "好滋好味鸡蛋仔",
+          category: "江浙小吃、小吃零食",
+          desc: "荷兰优质淡奶，奶香浓而不腻",
+          address: "上海市普陀区真北路",
+          shop: "王小虎夫妻店",
+          shopId: "10333",
+        },
+      ],
     };
   },
   created() {
@@ -125,17 +118,17 @@ export default {
 <style rel="stylesheet/scss" lang="scss" scoped>
 @import url("//unpkg.com/element-plus/lib/theme-chalk/index.css");
 .demo-table-expand {
-    font-size: 0;
-  }
-  .demo-table-expand label {
-    width: 90px;
-    color: #99a9bf;
-  }
-  .demo-table-expand .el-form-item {
-    margin-right: 0;
-    margin-bottom: 0;
-    width: 50%;
-  }
+  font-size: 0;
+}
+.demo-table-expand label {
+  width: 90px;
+  color: #99a9bf;
+}
+.demo-table-expand .el-form-item {
+  margin-right: 0;
+  margin-bottom: 0;
+  width: 50%;
+}
 
 .dashboard {
   &-container {
@@ -164,8 +157,7 @@ export default {
   }
 }
 .info img {
-  width: 90%;
-  height: 90%;
+  width: 150px;
+  height: 150px;
 }
-
 </style>
