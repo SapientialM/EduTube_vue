@@ -121,11 +121,12 @@ export default {
   border-bottom: 2px solid rgb(107, 132, 155);
   .pic {
     float: left;
-    width: 25%;
+    width: 20%;
+    margin: 0 30px;
   }
   .intro {
     overflow: hidden;
-    width: 70%;
+    width: 60%;
     .roles {
       font-size: 20px;
     }
