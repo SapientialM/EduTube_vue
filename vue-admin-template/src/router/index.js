@@ -222,7 +222,7 @@ export const constantRouterMap = [
     children: [
       {
         path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'element-ui', icon: 'link' }
+        meta: { title: 'vue-element-admin', icon: 'link' }
       }
     ]
   },
