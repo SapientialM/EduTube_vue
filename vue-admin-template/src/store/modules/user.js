@@ -53,6 +53,7 @@ const user = {
           commit('SET_NAME', data.name)
           commit('SET_AVATAR', data.avatar)
           resolve(response)
+          return response
         }).catch(error => {
           reject(error)
         })
