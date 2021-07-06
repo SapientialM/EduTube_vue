@@ -21,27 +21,27 @@
                 <span>{{ scope.row.name }}</span>
               </el-form-item>
               <el-form-item label="ID">
-                <span>{{ scope.row.shop }}</span>
-              </el-form-item>
-              <el-form-item label="操作者">
                 <span>{{ scope.row.id }}</span>
               </el-form-item>
+              <el-form-item label="操作者">
+                <span>{{ scope.row.user }}</span>
+              </el-form-item>
               <el-form-item label="时间">
-                <span>{{ scope.row.shopId }}</span>
+                <span>{{ scope.row.time }}</span>
               </el-form-item>
               <el-form-item label="操作类型">
                 <span>{{ scope.row.category }}</span>
               </el-form-item>
               <el-form-item label="备注">
-                <span>{{ scope.row.address }}</span>
+                <span>{{ scope.row.note }}</span>
               </el-form-item>
             </el-form>
           </template>
         </el-table-column>
-        <el-table-column label="时间" prop="id"> </el-table-column>
-        <el-table-column label="操作类型" prop="id"> </el-table-column>
-        <el-table-column label="操作者" prop="name"> </el-table-column>
-        <el-table-column label="备注" prop="desc"> </el-table-column>
+        <el-table-column label="时间" prop="time"> </el-table-column>
+        <el-table-column label="操作类型" prop="category"> </el-table-column>
+        <el-table-column label="操作者" prop="user"> </el-table-column>
+        <el-table-column label="备注" prop="note"> </el-table-column>
       </el-table>
     </div>
     <div class="messages"><h3>消息通知</h3></div>
@@ -62,39 +62,11 @@ export default {
       tableData: [
         {
           id: "12987122",
-          name: "好滋好味鸡蛋仔",
-          category: "江浙小吃、小吃零食",
-          desc: "荷兰优质淡奶，奶香浓而不腻",
-          address: "上海市普陀区真北路",
-          shop: "王小虎夫妻店",
-          shopId: "10333",
-        },
-        {
-          id: "12987123",
-          name: "好滋好味鸡蛋仔",
-          category: "江浙小吃、小吃零食",
-          desc: "荷兰优质淡奶，奶香浓而不腻",
-          address: "上海市普陀区真北路",
-          shop: "王小虎夫妻店",
-          shopId: "10333",
-        },
-        {
-          id: "12987125",
-          name: "好滋好味鸡蛋仔",
-          category: "江浙小吃、小吃零食",
-          desc: "荷兰优质淡奶，奶香浓而不腻",
-          address: "上海市普陀区真北路",
-          shop: "王小虎夫妻店",
-          shopId: "10333",
-        },
-        {
-          id: "12987126",
-          name: "好滋好味鸡蛋仔",
-          category: "江浙小吃、小吃零食",
-          desc: "荷兰优质淡奶，奶香浓而不腻",
-          address: "上海市普陀区真北路",
-          shop: "王小虎夫妻店",
-          shopId: "10333",
+          name: "讲师列表",
+          category: "添加",
+          user: "admin",
+          time: "2021/07/06 16:52:00",
+          note: "范例"
         },
       ],
     };
