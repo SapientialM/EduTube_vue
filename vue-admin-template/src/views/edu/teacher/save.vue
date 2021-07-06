@@ -18,8 +18,9 @@
       </el-form-item>
       <el-form-item label="讲师头衔">
         <el-select v-model="teacher.level" clearable placeholder="请选择">
-          <el-option :value="1" label="高级讲师"/>
-          <el-option :value="2" label="首席讲师"/>
+          <el-option :value="1" label="首席讲师"/>
+          <el-option :value="2" label="高级讲师"/>
+          <el-option :value="3" label="初级讲师"/>
         </el-select>
       </el-form-item>
       <el-form-item label="讲师资历">

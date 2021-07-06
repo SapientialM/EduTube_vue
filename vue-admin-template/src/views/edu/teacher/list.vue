@@ -16,8 +16,9 @@
 
       <el-form-item>
         <el-select v-model="teacherQuery.level" clearable placeholder="讲师头衔">
-          <el-option :value="1" label="高级讲师"/>
-          <el-option :value="2" label="首席讲师"/>
+          <el-option :value="1" label="首席讲师"/>
+          <el-option :value="2" label="高级讲师"/>
+          <el-option :value="3" label="初级讲师"/>
         </el-select>
       </el-form-item>
 
@@ -65,7 +66,9 @@
 
       <el-table-column label="头衔" width="80">
         <template slot-scope="scope">
-          {{ scope.row.level===1?'高级讲师':'首席讲师' }}
+          {{ 
+            scope.row.level===1?'首席讲师':(scope.row.level===2?'高级讲师':'初级讲师') 
+            }}
         </template>
       </el-table-column>
 
@@ -122,7 +125,7 @@ export default {
     //讲师列表
     getList(page=1) {
         this.page=page
-      teacher
+        teacher
         .getTeacherListPage(this.page, this.limit, this.teacherQuery)
         .then((response) => {
           //console.log(response)
@@ -133,6 +136,7 @@ export default {
           console.log(this.total);
         })
         .catch((error) => {
+          console.log("列表有问题")
           console.log(error);
         });
     },
