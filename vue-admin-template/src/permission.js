@@ -1,3 +1,8 @@
+/**
+ * @author agrinJPG
+ * @date 2021/7/6 17:16
+ * @Description permission 路由重定向、进度条
+ */
 import router from './router'
 import store from './store'
 import NProgress from 'nprogress' // Progress 进度条

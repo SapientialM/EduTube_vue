@@ -1,3 +1,8 @@
+<!--
+ * @author agrinJPG
+ * @date 2021/7/6 17:16
+ * @Description 首页
+-->
 <template>
   <div class="dashboard-container">
     <div class="info">
