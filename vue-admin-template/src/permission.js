@@ -6,6 +6,7 @@ import { Message } from 'element-ui'
 import { getToken } from '@/utils/auth' // 验权
 
 const whiteList = ['/login'] // 不重定向白名单
+
 router.beforeEach((to, from, next) => {
   NProgress.start()
   if (getToken()) {
@@ -27,12 +28,15 @@ router.beforeEach((to, from, next) => {
       }
     }
   } else {
-    if (whiteList.indexOf(to.path) !== -1) {
-      next()
-    } else {
-      next(`/login?redirect=${to.path}`) // 否则全部重定向到登录页
-      NProgress.done()
-    }
+    console.log('需要离线')
+    // 本地离线操作
+    next()
+    // if (whiteList.indexOf(to.path) !== -1) {
+    //   next()
+    // } else {
+    //   next(`/login?redirect=${to.path}`) // 否则全部重定向到登录页
+    //   NProgress.done()
+    // }
   }
 })
 
