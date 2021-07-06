@@ -153,7 +153,7 @@ export const constantRouterMap = [
         path: 'index',
         name: 'Form',
         component: () => import('@/views/form/index'),
-        meta: { title: '添加课程', icon: 'form' }
+        meta: { title: '发布活动', icon: 'form' }
       }
     ]
   },
@@ -164,7 +164,7 @@ export const constantRouterMap = [
     redirect: '/nested/menu1',
     name: 'Nested',
     meta: {
-      title: '菜单',
+      title: '菜单范例',
       icon: 'nested'
     },
     children: [
