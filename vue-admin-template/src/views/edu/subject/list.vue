@@ -59,11 +59,13 @@ export default {
 
     remove(node, data) {
         console.log("node: "+data.id);
+        var oneindex = 0;
+        var twoindex = 0;
         if(node.parent.parent == null){
           console.log("一级列表");
           const parent = node.parent;
           // 删 data
-          const oneindex = this.data2.findIndex(d => d.id === data.id);
+          oneindex = this.data2.findIndex(d => d.id === data.id);
           this.data2.splice(oneindex,1);
           
         }
@@ -71,10 +73,12 @@ export default {
           console.log("二级列表");
           const parent = node.parent;
           // 删 data
-          const oneindex = this.data2.findIndex(d => d.id === parent.data.id);
-          const twoindex = this.data2[oneindex].children.findIndex(d => d.id === data.id);
+          oneindex = this.data2.findIndex(d => d.id === parent.data.id);
+          twoindex = this.data2[oneindex].children.findIndex(d => d.id === data.id);
           this.data2[oneindex].children.splice(twoindex,1);
         }
+        
+        console.log(this.data2[oneindex]);
         
     },
 
