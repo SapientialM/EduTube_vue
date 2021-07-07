@@ -42,7 +42,16 @@ export const constantRouterMap = [
       component: () => import('@/views/dashboard/index')
     }]
   },
+  {
+    path: '/logs',
+    component: Layout,
+    hidden: true,
+    children: [{
+      path: '',
+      component: () => import('@/views/logs/index')
+    }]
 
+  },
   {
     path: '/settings',
     component: Layout,

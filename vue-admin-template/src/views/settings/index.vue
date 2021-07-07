@@ -92,15 +92,17 @@
           </span>
         </el-dialog>
       </div>
-      <el-tabs type="border-card">
-        <el-tab-pane label="基本信息"
-          ><h4>基本信息</h4>
-          <div class="name">用户名：</div>
-          <div class="id">ID ：</div>
-          <div class="role">身份：</div>
-        </el-tab-pane>
-        <el-tab-pane label="账号设置"><h4>账号设置</h4></el-tab-pane>
-      </el-tabs>
+      <div class="card">
+        <el-tabs type="border-card">
+          <el-tab-pane label="基本信息"
+            ><h4>基本信息</h4>
+            <div class="name">用户名：</div>
+            <div class="id">ID ：</div>
+            <div class="role">身份：</div>
+          </el-tab-pane>
+          <el-tab-pane label="账号设置"><h4>账号设置</h4></el-tab-pane>
+        </el-tabs>
+      </div>
     </div>
   </div>
 </template>
@@ -253,12 +255,28 @@ a {
   margin: 0 0 30px 30px;
   font-size: 30px;
 }
+.picReset {
+  display: block;
+  height: 110px;
+}
 .show {
   display: block;
-  padding-left: 40%;
+  height: 85px;
+  margin-left: 40%;
+}
+.show img {
+  float: left;
 }
 .showName {
-  display: inline;
+  overflow: hidden;
+  display: inline-block;
+}
+.picReset el-button {
+  text-align: center;
+}
+.card {
+  display: block;
+  margin-top: 30px;
 }
 .previewBox {
   text-align: center;

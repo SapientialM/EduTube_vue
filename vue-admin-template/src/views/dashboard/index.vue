@@ -23,6 +23,7 @@
       </div>
       <div class="lastLogs">
         <h3>最近操作</h3>
+        <router-link to="/logs"><a>更多...</a> </router-link>
         <el-table :data="operationData" style="width: 100%">
           <el-table-column type="expand">
             <template slot-scope="scope">
@@ -40,7 +41,8 @@
             </template>
           </el-table-column>
           <el-table-column label="ID" prop="id"> </el-table-column>
-          <el-table-column label="操作描述" prop="description"> </el-table-column>
+          <el-table-column label="操作描述" prop="description">
+          </el-table-column>
           <el-table-column label="时间" prop="gmtCreate"> </el-table-column>
         </el-table>
       </div>
@@ -142,19 +144,19 @@ export default {
       });
     this.getHistory();
   },
-  methods:{
-    getHistory(){
+  methods: {
+    getHistory() {
       history.getHistory().then((res) => {
         // console.log(res)
         // this.operationData = res.data;
-        this.operationList =  res.data.history;
+        this.operationList = res.data.history;
         console.log(this.operationList.length);
-        for(var i=0;i<10;i++){
+        for (var i = 0; i < 10; i++) {
           this.operationData.push(this.operationList[i]);
         }
-      })
-    }
-  }
+      });
+    },
+  },
 };
 </script>
 
@@ -245,7 +247,19 @@ export default {
   height: 150px;
 }
 .lastLogs {
-  margin: 50px 0;
+  margin: 40px 0;
+  h3 {
+    display: inline-block;
+  }
+  a {
+    float: right;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    line-height: 57px;
+    font-size: 14px;
+    color: #00a4ff;
+  }
 }
 .messages {
   margin: 50px 0;
