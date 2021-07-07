@@ -13,7 +13,16 @@
 
   </div>
 </template>
-
+<style>
+.el-tree{
+  background-color: rgb(139, 171, 184);
+  color: rgb(39, 35, 243);
+  font-weight: bolder;
+}
+.el-tree-node{
+  border:1px solid rgb(102, 92, 92);
+}
+</style>
 
 <script>
 import subject from '@/api/edu/subject'
