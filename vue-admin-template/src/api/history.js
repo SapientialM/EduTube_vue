@@ -7,11 +7,18 @@
 import request from '@/utils/request'
 
 export default{
-    // 获取最近操作记录
+    // 获取所有操作记录
     getHistory(){
         return request({
             url:'/eduservice/teacher/history',
             method: 'get'
         })
-    }
+    },
+    // 获取最近操作记录
+    getNewHistory(){
+        return request({
+            url:'/eduservice/teacher/newhistory',
+            method: 'get'
+        })
+    },
 }

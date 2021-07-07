@@ -8,14 +8,10 @@
     <div class="body">
       <div class="info">
         <div class="pic">
-          <img
-            :src="avatar + '?imageView2/1/w/80/h/80'"
-            class="user-avatar"
-            style="border-radius: 50%"
-          />
+          <img :src="avatar + '?imageView2/1/w/80/h/80'" class="user-avatar" />
         </div>
         <div class="intro">
-          <div class="dashboard-text">{{ name }}</div>
+          <div class="dashboard-text">name:{{ name }}</div>
           <div class="dashboard-text roles">
             roles:<span v-for="role in roles" :key="role">{{ role }}</span>
           </div>
@@ -74,14 +70,14 @@
           <dd><a href="#">帮助</a></dd>
         </dl>
         <dl>
-          <dt>关于 EduTube</dt>
+          <dt>关于学成网</dt>
           <dd><a href="#">管理团队</a></dd>
           <dd><a href="#">工作机会</a></dd>
           <dd><a href="#">客户服务</a></dd>
           <dd><a href="#">帮助</a></dd>
         </dl>
         <dl>
-          <dt>关于 EduTube</dt>
+          <dt>关于学成网</dt>
           <dd><a href="#">管理团队</a></dd>
           <dd><a href="#">工作机会</a></dd>
           <dd><a href="#">客户服务</a></dd>
@@ -146,12 +142,12 @@ export default {
   },
   methods: {
     getHistory() {
-      history.getHistory().then((res) => {
+      history.getNewHistory().then((res) => {
         // console.log(res)
         // this.operationData = res.data;
-        this.operationList = res.data.history;
+        this.operationList = res.data.newhistory;
         console.log(this.operationList.length);
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < this.operationList.length; i++) {
           this.operationData.push(this.operationList[i]);
         }
       });
@@ -275,6 +271,6 @@ export default {
   order: -1;
   padding: 0 20px;
   font-weight: 900;
-  color: rgb(104, 187, 243);
+  color: #666;
 }
 </style>
