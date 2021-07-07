@@ -3,7 +3,7 @@
   <div>
     <h3>操作历史</h3>
     <div class="history">
-      <el-table :data="operationData" style="width: 100%">
+      <el-table :data="allHistory" style="width: 100%">
           <el-table-column type="expand">
             <template slot-scope="scope">
               <el-form label-position="left" inline class="demo-table-expand">
@@ -17,25 +17,55 @@
           <el-table-column label="操作描述" prop="description">
           </el-table-column>
           <el-table-column label="时间" prop="gmtCreate"> </el-table-column>
-        </el-table>
+      </el-table>
     </div>
     <div class="pageChange">
-      <el-pagination background layout="prev, pager, next" :total="1000">
+      <el-pagination background layout="prev, pager, next" :current-page="this.page" :page-count="this.maxpage" @current-change="this.getHistory">
       </el-pagination>
     </div>
   </div>
 </template>
 
 <script>
+import history from "@/api/history";
 export default {
   name: "",
   props: {
     msg: String,
   },
   data() {
-    return {};
+    return {
+      allHistory:[],
+      List:null,
+      maxpage: 2,
+      page: 1,
+    };
   },
-  methods: {},
+  created(){
+    this.getHistory();
+  },
+  methods: {
+    getHistory() {
+      console.log(this.page);
+      if(this.List == null)
+        history.getHistory().then((res) => {
+          // console.log(res)
+          // this.operationData = res.data;
+          this.List = res.data.history;
+          console.log(this.List.length);
+          this.allHistory = [];
+          for (var i = (this.page-1)*10; i < this.page*10; i++) {
+            this.allHistory.push(this.List[i]);
+          }
+        });
+      else{
+        this.allHistory = [];
+        for (var i = (this.page-1)*10; i < this.page*10; i++) {
+          this.allHistory.push(this.List[i]);
+        }
+      }
+    },
+  },
 };
 </script>
 <style scoped>
