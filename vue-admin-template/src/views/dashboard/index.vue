@@ -11,7 +11,7 @@
           <img :src="avatar + '?imageView2/1/w/80/h/80'" class="user-avatar" />
         </div>
         <div class="intro">
-          <div class="dashboard-text">name:{{ name }}</div>
+          <div class="dashboard-text">{{ name }}</div>
           <div class="dashboard-text roles">
             roles:<span v-for="role in roles" :key="role">{{ role }}</span>
           </div>
@@ -44,12 +44,16 @@
         <h3>消息通知</h3>
         <el-collapse v-model="activeName" accordion>
           <!-- 读数据失败 -->
-          <el-collapse-item v-for="item in messageData" :key="item.id" :title="item.title+' '+item.time" :name="item.id" >
+          <el-collapse-item
+            v-for="item in messageData"
+            :key="item.id"
+            :title="item.title + ' ' + item.time"
+            :name="item.id"
+          >
             <div>
               {{ item.content }}
             </div>
           </el-collapse-item>
-          
         </el-collapse>
       </div>
     </div>
@@ -64,14 +68,14 @@
           <dd><a href="#">帮助</a></dd>
         </dl>
         <dl>
-          <dt>关于学成网</dt>
+          <dt>关于 EduTube</dt>
           <dd><a href="#">管理团队</a></dd>
           <dd><a href="#">工作机会</a></dd>
           <dd><a href="#">客户服务</a></dd>
           <dd><a href="#">帮助</a></dd>
         </dl>
         <dl>
-          <dt>关于学成网</dt>
+          <dt>关于 EduTube</dt>
           <dd><a href="#">管理团队</a></dd>
           <dd><a href="#">工作机会</a></dd>
           <dd><a href="#">客户服务</a></dd>
@@ -107,7 +111,7 @@ export default {
           sender: "others",
           accepted: "admin",
           content:
-          "与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作等。",
+            "与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作等。",
         },
         {
           id: "2",
@@ -117,7 +121,7 @@ export default {
           sender: "others",
           accepted: "admin",
           content:
-          "与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作等。",
+            "与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作等。",
         },
       ],
     };
@@ -253,6 +257,6 @@ export default {
   order: -1;
   padding: 0 20px;
   font-weight: 900;
-  color: #666;
+  color: rgb(104, 187, 243);
 }
 </style>
