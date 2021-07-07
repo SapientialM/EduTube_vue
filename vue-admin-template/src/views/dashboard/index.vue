@@ -24,14 +24,8 @@
           <el-table-column type="expand">
             <template slot-scope="scope">
               <el-form label-position="left" inline class="demo-table-expand">
-                <el-form-item label="ID">
-                  <span>{{ scope.row.id }}</span>
-                </el-form-item>
-                <el-form-item label="操作描述">
-                  <span>{{ scope.row.description }}</span>
-                </el-form-item>
-                <el-form-item label="时间">
-                  <span>{{ scope.row.gmtCreate }}</span>
+                <el-form-item label="extend">
+                  <span>可扩展内容</span>
                 </el-form-item>
               </el-form>
             </template>
