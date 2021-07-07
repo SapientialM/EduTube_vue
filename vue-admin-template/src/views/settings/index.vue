@@ -5,14 +5,18 @@
       <h3 class="header">个人设置</h3>
       <div class="picReset">
         <div class="show">
-          <img
-            :src="avatar + '?imageView2/1/w/80/h/80'"
-            class="user-avatar"
-            style="border-radius: 50%"
-          />
+          <div class="showLeft">
+            <img
+              :src="avatar + '?imageView2/1/w/80/h/80'"
+              class="user-avatar"
+              style="border-radius: 50%"
+            />
+            <div class="btn">
+              <el-button type="text" @click="editAvatar">修改头像</el-button>
+            </div>
+          </div>
           <div class="showName">{{ info.data.name }}</div>
         </div>
-        <el-button type="text" @click="editAvatar">修改头像</el-button>
         <el-dialog
           title="修改头像"
           :visible.sync="editAvatarDialog"
@@ -94,11 +98,57 @@
       </div>
       <div class="card">
         <el-tabs type="border-card">
-          <el-tab-pane label="基本信息"
-            ><h4>基本信息</h4>
-            <div class="name">用户名：</div>
-            <div class="id">ID ：</div>
-            <div class="role">身份：</div>
+          <el-tab-pane label="基本信息">
+            <el-radio-group v-model="labelPosition" size="small">
+            </el-radio-group>
+            <div style="margin: 20px"></div>
+            <el-form
+              :inline="true"
+              label-position="left"
+              label-width="80px"
+              :model="formInline"
+            >
+              <el-form-item label="用户名">
+                <el-input
+                  v-model="formInline.user"
+                  placeholder="审批人"
+                ></el-input></el-form-item>
+              <el-form-item label="ID">
+                <el-input
+                  v-model="formInline.user"
+                  placeholder="审批人"
+                ></el-input></el-form-item>
+              <el-form-item label="性别">
+                <el-input
+                  v-model="formInline.user"
+                  placeholder="审批人"
+                ></el-input></el-form-item>
+              <el-form-item label="身份">
+                <el-input
+                  v-model="formInline.user"
+                  placeholder="审批人"
+                ></el-input></el-form-item>
+              <el-form-item label="电话">
+                <el-input
+                  v-model="formInline.user"
+                  placeholder="审批人"
+                ></el-input></el-form-item>
+              <el-form-item label="微信">
+                <el-input
+                  v-model="formInline.user"
+                  placeholder="审批人"
+                ></el-input></el-form-item>
+              </el-form-item>
+              <el-form-item label="活动区域">
+                <el-select v-model="formInline.region" placeholder="活动区域">
+                  <el-option label="区域一" value="shanghai"></el-option>
+                  <el-option label="区域二" value="beijing"></el-option>
+                </el-select>
+              </el-form-item>
+              <el-form-item>
+                <el-button type="primary" @click="onSubmit">查询</el-button>
+              </el-form-item>
+            </el-form>
           </el-tab-pane>
           <el-tab-pane label="账号设置"><h4>账号设置</h4></el-tab-pane>
         </el-tabs>
@@ -136,6 +186,10 @@ export default {
         autoCropWidth: 150,
         autoCropHeight: 150,
         fixedBox: true, // 截图框固定大小
+      },
+      formInline: {
+        user: "",
+        region: "",
       },
     };
   },
@@ -216,6 +270,9 @@ export default {
       // 转化为blob
       reader.readAsArrayBuffer(file.raw);
     },
+    onSubmit() {
+      console.log("submit!");
+    },
   },
   created() {
     this.$store
@@ -249,10 +306,10 @@ a {
   color: #42b983;
 }
 .setting-container {
-  margin: 30px;
+  margin: 30px 10%;
 }
 .header {
-  margin: 0 0 30px 30px;
+  margin: 0 0 5px 30px;
   font-size: 30px;
 }
 .picReset {
@@ -264,15 +321,22 @@ a {
   height: 85px;
   margin-left: 40%;
 }
-.show img {
+.showLeft {
   float: left;
+}
+.show img {
+  margin: 0 20px;
 }
 .showName {
   overflow: hidden;
   display: inline-block;
+  margin-top: 28px;
+  font-weight: bold;
+  font-size: 22px;
 }
-.picReset el-button {
-  text-align: center;
+.picReset .btn {
+  display: block;
+  margin-left: 32px;
 }
 .card {
   display: block;
@@ -296,5 +360,16 @@ a {
 .cropper {
   width: 260px;
   height: 260px;
+}
+.card .el-form {
+  margin: 0 70px;
+  margin-top: -15px;
+  width: 700px;
+}
+.card .el-form-item {
+  width: 300px;
+}
+.card .el-form-item .el-input {
+  width: 200px;
 }
 </style>

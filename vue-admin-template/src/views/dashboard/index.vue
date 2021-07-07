@@ -11,7 +11,7 @@
           <img :src="avatar + '?imageView2/1/w/80/h/80'" class="user-avatar" />
         </div>
         <div class="intro">
-          <div class="dashboard-text">name:{{ name }}</div>
+          <div class="dashboard-text">{{ name }}</div>
           <div class="dashboard-text roles">
             roles:<span v-for="role in roles" :key="role">{{ role }}</span>
           </div>
