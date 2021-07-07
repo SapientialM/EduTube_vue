@@ -23,35 +23,25 @@
       </div>
       <div class="lastLogs">
         <h3>最近操作</h3>
-        <el-table :data="tableData" style="width: 100%">
+        <el-table :data="operationData" style="width: 100%">
           <el-table-column type="expand">
             <template slot-scope="scope">
               <el-form label-position="left" inline class="demo-table-expand">
-                <el-form-item label="操作对象">
-                  <span>{{ scope.row.name }}</span>
-                </el-form-item>
                 <el-form-item label="ID">
                   <span>{{ scope.row.id }}</span>
                 </el-form-item>
-                <el-form-item label="操作者">
-                  <span>{{ scope.row.user }}</span>
+                <el-form-item label="操作描述">
+                  <span>{{ scope.row.description }}</span>
                 </el-form-item>
                 <el-form-item label="时间">
-                  <span>{{ scope.row.time }}</span>
-                </el-form-item>
-                <el-form-item label="操作类型">
-                  <span>{{ scope.row.category }}</span>
-                </el-form-item>
-                <el-form-item label="备注">
-                  <span>{{ scope.row.note }}</span>
+                  <span>{{ scope.row.gmtCreate }}</span>
                 </el-form-item>
               </el-form>
             </template>
           </el-table-column>
-          <el-table-column label="时间" prop="time"> </el-table-column>
-          <el-table-column label="操作类型" prop="category"> </el-table-column>
-          <el-table-column label="操作者" prop="user"> </el-table-column>
-          <el-table-column label="备注" prop="note"> </el-table-column>
+          <el-table-column label="ID" prop="id"> </el-table-column>
+          <el-table-column label="操作描述" prop="description"> </el-table-column>
+          <el-table-column label="时间" prop="gmtCreate"> </el-table-column>
         </el-table>
       </div>
       <div class="messages">
@@ -103,6 +93,8 @@
 <script src="//unpkg.com/element-plus/lib/index.full.js"></script>
 <script>
 import { mapGetters } from "vuex";
+import history from "@/api/history";
+
 export default {
   name: "Dashboard",
   computed: {
@@ -112,16 +104,8 @@ export default {
     return {
       info: "",
       activeName: "1",
-      tableData: [
-        {
-          id: "12987122",
-          name: "讲师列表",
-          category: "添加",
-          user: "admin",
-          time: "2021/07/06 16:52:00",
-          note: "范例",
-        },
-      ],
+      operationList: null,
+      operationData: [],
       messageData: [
         {
           id: "1",
@@ -156,7 +140,21 @@ export default {
         console.log("something wrong");
         console.log(e);
       });
+    this.getHistory();
   },
+  methods:{
+    getHistory(){
+      history.getHistory().then((res) => {
+        // console.log(res)
+        // this.operationData = res.data;
+        this.operationList =  res.data.history;
+        console.log(this.operationList.length);
+        for(var i=0;i<10;i++){
+          this.operationData.push(this.operationList[i]);
+        }
+      })
+    }
+  }
 };
 </script>
 
