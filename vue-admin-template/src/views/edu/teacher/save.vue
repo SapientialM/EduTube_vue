@@ -87,7 +87,6 @@ export default {
         imagecropperShow:false,
         imagecropperKey:0,//上传组件key值
         BASE_API:process.env.BASE_API, //获取dev.env.js里面地址
-
         saveBtnDisabled:false  // 保存按钮是否禁用,
         }
     },
@@ -158,6 +157,7 @@ export default {
         },
         //添加讲师的方法
         saveTeacher() {
+        console.log(this.teacher);
         teacherApi.addTeacher(this.teacher)
             .then(response => {//添加成功
             //提示信息
