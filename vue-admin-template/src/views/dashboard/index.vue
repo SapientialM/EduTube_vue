@@ -90,7 +90,6 @@
       <div class="links">
         <dl>
           <dt>关于 EduTube</dt>
-          <dd><a href="#">关于</a></dd>
           <dd><a href="#">管理团队</a></dd>
           <dd><a href="#">广告服务</a></dd>
           <dd><a href="#">客户服务</a></dd>
@@ -98,7 +97,6 @@
         </dl>
         <dl>
           <dt>关于学成网</dt>
-          <dd><a href="#">关于</a></dd>
           <dd><a href="#">管理团队</a></dd>
           <dd><a href="#">工作机会</a></dd>
           <dd><a href="#">客户服务</a></dd>
@@ -106,7 +104,6 @@
         </dl>
         <dl>
           <dt>关于学成网</dt>
-          <dd><a href="#">关于</a></dd>
           <dd><a href="#">管理团队</a></dd>
           <dd><a href="#">工作机会</a></dd>
           <dd><a href="#">客户服务</a></dd>
@@ -198,22 +195,27 @@ export default {
         font-size: 35px;
         padding: 25px;
         padding-left: 35px;
+        padding-bottom: 0;
+        margin: 0;
       }
       .links {
-        float: right;
+        float: left;
+        margin-left: 200px;
       }
       .links dl {
         float: right;
         margin-left: 100px;
+        margin-bottom: 10px;
+        font-weight: bold;
       }
       .links dl dt {
         font-size: 16px;
-        color: #333;
+        color: #fff;
         margin-bottom: 5px;
       }
       .links dl dd a {
-        font-size: 12px;
-        color: #333;
+        // font-size: 12px;
+        color: #fff;
       }
     }
   }
