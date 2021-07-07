@@ -250,6 +250,9 @@ export default {
     font-size: 14px;
     color: #00a4ff;
   }
+  /deep/ .el-table th {
+    color: rgb(78, 160, 228);
+  }
 }
 .messages {
   margin: 50px 0;
