@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "element-plus": "^1.0.2-beta.54"
+    "element-plus": "^1.0.2-beta.54",
+    "vue-cropper": "^0.5.6"
   }
 }
