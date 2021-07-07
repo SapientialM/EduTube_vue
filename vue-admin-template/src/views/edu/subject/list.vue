@@ -5,11 +5,13 @@
     <el-tree
       ref="tree2"
       :data="data2"
+      node-key="id"
       :props="defaultProps"
       :filter-node-method="filterNode"
+      :expand-on-click-node="false"
       class="filter-tree"
       :render-content="renderContent"
-      default-expand-all
+      default-expand-all 
     />
 
   </div>
@@ -55,6 +57,27 @@ export default {
       return data.title.toLowerCase().indexOf(value.toLowerCase()) !== -1
     },
 
+    remove(node, data) {
+        console.log("node: "+data.id);
+        if(node.parent.parent == null){
+          console.log("一级列表");
+          const parent = node.parent;
+          // 删 data
+          const oneindex = this.data2.findIndex(d => d.id === data.id);
+          this.data2.splice(oneindex,1);
+          
+        }
+        else{
+          console.log("二级列表");
+          const parent = node.parent;
+          // 删 data
+          const oneindex = this.data2.findIndex(d => d.id === parent.data.id);
+          const twoindex = this.data2[oneindex].children.findIndex(d => d.id === data.id);
+          this.data2[oneindex].children.splice(twoindex,1);
+        }
+        
+    },
+
     getAllSubjectList(){
         subject.getSubjectList()
         .then(response=>{
@@ -70,7 +93,7 @@ export default {
               <el-button size="mini" type="text" on-click={ () => this.remove(node, data) }>Delete</el-button>
             </span>
           </span>);
-    }
+    },
 
 
 
