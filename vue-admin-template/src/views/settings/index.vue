@@ -4,7 +4,14 @@
     <div class="setting-container">
       <h3 class="header">个人设置</h3>
       <div class="picReset">
-        <img :src="avatar + '?imageView2/1/w/80/h/80'" class="user-avatar" />
+        <div class="show">
+          <img
+            :src="avatar + '?imageView2/1/w/80/h/80'"
+            class="user-avatar"
+            style="border-radius: 50%"
+          />
+          <div class="showName">{{ info.data.name }}</div>
+        </div>
         <el-button type="text" @click="editAvatar">修改头像</el-button>
         <el-dialog
           title="修改头像"
@@ -84,7 +91,6 @@
             <el-button type="primary" @click="saveEditAvatar">确 定</el-button>
           </span>
         </el-dialog>
-        <div class="showName">{{ info.data.name }}</div>
       </div>
       <el-tabs type="border-card">
         <el-tab-pane label="基本信息"
@@ -246,6 +252,13 @@ a {
 .header {
   margin: 0 0 30px 30px;
   font-size: 30px;
+}
+.show {
+  display: block;
+  padding-left: 40%;
+}
+.showName {
+  display: inline;
 }
 .previewBox {
   text-align: center;

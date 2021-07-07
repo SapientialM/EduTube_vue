@@ -8,7 +8,11 @@
     <div class="body">
       <div class="info">
         <div class="pic">
-          <img :src="avatar + '?imageView2/1/w/80/h/80'" class="user-avatar" />
+          <img
+            :src="avatar + '?imageView2/1/w/80/h/80'"
+            class="user-avatar"
+            style="border-radius: 50%"
+          />
         </div>
         <div class="intro">
           <div class="dashboard-text">{{ name }}</div>
