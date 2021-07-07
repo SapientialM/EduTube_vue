@@ -8,12 +8,22 @@
       :props="defaultProps"
       :filter-node-method="filterNode"
       class="filter-tree"
+      :render-content="renderContent"
       default-expand-all
     />
 
   </div>
 </template>
-
+<style>
+.custom-tree-node {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    padding-right: 8px;
+  }
+</style>
 
 <script>
 import subject from '@/api/edu/subject'
@@ -50,8 +60,17 @@ export default {
         .then(response=>{
             this.data2=response.data.subjectList
         })
-    }
+    },
 
+    renderContent(h, { node, data, store }) {
+        return (
+          <span class="custom-tree-node">
+            <span>{node.label}</span>
+            <span>
+              <el-button size="mini" type="text" on-click={ () => this.remove(node, data) }>Delete</el-button>
+            </span>
+          </span>);
+    }
 
 
 

@@ -19,6 +19,9 @@
       </div>
       <div class="lastLogs">
         <h3>最近操作</h3>
+        <el-tooltip class="item" effect="light" content="只显示最近10条操作记录，查看历史记录可点击右方 “更多” " placement="right-start">
+            <i class="el-icon-question" />
+        </el-tooltip>
         <router-link to="/logs"><a>更多...</a> </router-link>
         <el-table :data="operationData" style="width: 100%">
           <el-table-column type="expand">
