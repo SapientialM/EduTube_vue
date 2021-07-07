@@ -1,7 +1,24 @@
 <!--  -->
 <template>
   <div>
-    操作记录
+    <h3>操作历史</h3>
+    <div class="history">
+      <el-table :data="operationData" style="width: 100%">
+          <el-table-column type="expand">
+            <template slot-scope="scope">
+              <el-form label-position="left" inline class="demo-table-expand">
+                <el-form-item label="extend">
+                  <span>可扩展内容</span>
+                </el-form-item>
+              </el-form>
+            </template>
+          </el-table-column>
+          <el-table-column label="ID" prop="id"> </el-table-column>
+          <el-table-column label="操作描述" prop="description">
+          </el-table-column>
+          <el-table-column label="时间" prop="gmtCreate"> </el-table-column>
+        </el-table>
+    </div>
     <div class="pageChange">
       <el-pagination background layout="prev, pager, next" :total="1000">
       </el-pagination>
