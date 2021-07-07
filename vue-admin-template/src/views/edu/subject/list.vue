@@ -9,7 +9,8 @@
       :filter-node-method="filterNode"
       class="filter-tree"
       default-expand-all
-    />
+    >
+    </el-tree>
 
   </div>
 </template>
@@ -18,9 +19,7 @@
   color: rgb(5, 5, 5);
   font-weight: bolder;
 }
-.el-tree-node{
-  border:1px solid rgb(102, 92, 92);
-}
+
 </style>
 
 <script>
