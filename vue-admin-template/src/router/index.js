@@ -45,10 +45,14 @@ export const constantRouterMap = [
 
   {
     path: '/settings',
+    component: Layout,
     hidden: true,
-    component: () => import('@/views/settings/index')
-  },
+    children: [{
+      path: '',
+      component: () => import('@/views/settings/index')
+    }]
 
+  },
   {
     path: '/teacher',
     component: Layout,
