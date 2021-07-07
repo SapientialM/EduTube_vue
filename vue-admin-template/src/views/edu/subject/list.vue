@@ -15,8 +15,7 @@
 </template>
 <style>
 .el-tree{
-  background-color: rgb(139, 171, 184);
-  color: rgb(39, 35, 243);
+  color: rgb(5, 5, 5);
   font-weight: bolder;
 }
 .el-tree-node{
