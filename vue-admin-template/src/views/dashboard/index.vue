@@ -70,14 +70,14 @@
           <dd><a href="#">帮助</a></dd>
         </dl>
         <dl>
-          <dt>关于学成网</dt>
+          <dt>关于 EduTube</dt>
           <dd><a href="#">管理团队</a></dd>
           <dd><a href="#">工作机会</a></dd>
           <dd><a href="#">客户服务</a></dd>
           <dd><a href="#">帮助</a></dd>
         </dl>
         <dl>
-          <dt>关于学成网</dt>
+          <dt>关于 EduTube</dt>
           <dd><a href="#">管理团队</a></dd>
           <dd><a href="#">工作机会</a></dd>
           <dd><a href="#">客户服务</a></dd>
@@ -271,6 +271,6 @@ export default {
   order: -1;
   padding: 0 20px;
   font-weight: 900;
-  color: #666;
+  color: rgb(78, 160, 228);
 }
 </style>
