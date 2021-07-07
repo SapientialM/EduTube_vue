@@ -85,7 +85,35 @@
         </el-collapse>
       </div>
     </div>
-    <div class="footer"><h3>EduTube</h3></div>
+    <div class="footer">
+      <h3>EduTube</h3>
+      <div class="links">
+        <dl>
+          <dt>关于 EduTube</dt>
+          <dd><a href="#">关于</a></dd>
+          <dd><a href="#">管理团队</a></dd>
+          <dd><a href="#">广告服务</a></dd>
+          <dd><a href="#">客户服务</a></dd>
+          <dd><a href="#">帮助</a></dd>
+        </dl>
+        <dl>
+          <dt>关于学成网</dt>
+          <dd><a href="#">关于</a></dd>
+          <dd><a href="#">管理团队</a></dd>
+          <dd><a href="#">工作机会</a></dd>
+          <dd><a href="#">客户服务</a></dd>
+          <dd><a href="#">帮助</a></dd>
+        </dl>
+        <dl>
+          <dt>关于学成网</dt>
+          <dd><a href="#">关于</a></dd>
+          <dd><a href="#">管理团队</a></dd>
+          <dd><a href="#">工作机会</a></dd>
+          <dd><a href="#">客户服务</a></dd>
+          <dd><a href="#">帮助</a></dd>
+        </dl>
+      </div>
+    </div>
   </div>
 </template>
 <script src="//unpkg.com/vue@next"></script>
@@ -170,6 +198,22 @@ export default {
         font-size: 35px;
         padding: 25px;
         padding-left: 35px;
+      }
+      .links {
+        float: right;
+      }
+      .links dl {
+        float: right;
+        margin-left: 100px;
+      }
+      .links dl dt {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 5px;
+      }
+      .links dl dd a {
+        font-size: 12px;
+        color: #333;
       }
     }
   }
