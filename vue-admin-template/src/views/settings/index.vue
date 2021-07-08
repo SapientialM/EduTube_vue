@@ -103,10 +103,10 @@
             </el-radio-group>
             <div style="margin: 20px"></div>
             <el-form
-              :inline="true"
+              :inline="true" status-icon
               label-position="left"
               label-width="80px"
-              :model="formInline"
+              :model="formInline" class="demo-ruleForm"
             >
               <el-form-item label="用户名">
                 <el-input
@@ -123,12 +123,19 @@
                   v-model="formInline.user"
                   placeholder="男女"
                 ></el-input></el-form-item>
+              <el-form-item label="年龄" :rules="[
+      { type: 'number', message: '年龄必须为数字值'}
+    ]">
+                <el-input
+                  v-model.number="formInline.user"
+                  placeholder="审批人"
+                ></el-input></el-form-item>
               <el-form-item label="身份">
                 <el-input
                   v-model="formInline.user"
                   placeholder="审批人"
                 ></el-input></el-form-item>
-              <el-form-item label="电话">
+              <el-form-item label="联系电话">
                 <el-input
                   v-model="formInline.user"
                   placeholder="+86"
@@ -147,10 +154,13 @@
               </el-form-item>
               <el-form-item>
                 <el-button type="primary" @click="onSubmit">查询</el-button>
+                <el-button @click="resetForm('numberValidateForm')">重置</el-button>
               </el-form-item>
             </el-form>
           </el-tab-pane>
-          <el-tab-pane label="账号设置"><h4>账号设置</h4></el-tab-pane>
+          <el-tab-pane label="账号设置">
+            <div class="accountSet"></div>
+          </el-tab-pane>
         </el-tabs>
       </div>
     </div>
@@ -271,7 +281,17 @@ export default {
       reader.readAsArrayBuffer(file.raw);
     },
     onSubmit() {
-      console.log("submit!");
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          alert("submit!");
+        } else {
+          console.log("error submit!!");
+          return false;
+        }
+      });
+    },
+    resetForm(formName) {
+      this.$refs[formName].resetFields();
     },
   },
   created() {
