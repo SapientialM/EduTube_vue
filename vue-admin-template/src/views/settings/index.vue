@@ -111,17 +111,17 @@
               <el-form-item label="用户名">
                 <el-input
                   v-model="formInline.user"
-                  placeholder="审批人"
+                  placeholder="用户名"
                 ></el-input></el-form-item>
               <el-form-item label="ID">
                 <el-input
                   v-model="formInline.user"
-                  placeholder="审批人"
+                  placeholder="0"
                 ></el-input></el-form-item>
               <el-form-item label="性别">
                 <el-input
                   v-model="formInline.user"
-                  placeholder="审批人"
+                  placeholder="男女"
                 ></el-input></el-form-item>
               <el-form-item label="身份">
                 <el-input
@@ -131,18 +131,18 @@
               <el-form-item label="电话">
                 <el-input
                   v-model="formInline.user"
-                  placeholder="审批人"
+                  placeholder="+86"
                 ></el-input></el-form-item>
               <el-form-item label="微信">
                 <el-input
                   v-model="formInline.user"
-                  placeholder="审批人"
+                  placeholder="wx:"
                 ></el-input></el-form-item>
               </el-form-item>
               <el-form-item label="活动区域">
                 <el-select v-model="formInline.region" placeholder="活动区域">
-                  <el-option label="区域一" value="shanghai"></el-option>
-                  <el-option label="区域二" value="beijing"></el-option>
+                  <el-option label="上海" value="shanghai"></el-option>
+                  <el-option label="北京" value="beijing"></el-option>
                 </el-select>
               </el-form-item>
               <el-form-item>
