@@ -159,7 +159,9 @@
             </el-form>
           </el-tab-pane>
           <el-tab-pane label="账号设置">
-            <div class="accountSet"></div>
+            <div class="accountSet">
+              <account-reset />
+            </div>
           </el-tab-pane>
         </el-tabs>
       </div>
@@ -170,6 +172,8 @@
 <script>
 import { mapGetters } from "vuex";
 import { VueCropper } from "vue-cropper";
+import { AccountReset } from "../../components/AccountReset";
+
 export default {
   name: "Settings",
   computed: {
@@ -203,7 +207,7 @@ export default {
       },
     };
   },
-  components: { VueCropper },
+  components: { VueCropper, AccountReset },
   methods: {
     editAvatar() {
       this.editAvatarDialog = true;
